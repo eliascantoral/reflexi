@@ -37,3 +37,4 @@
 <body <?php body_class(); ?>>
 <div id="wrapper" class="hfeed">
 <div id="container">
+    Hola este es mi primer contenido....
