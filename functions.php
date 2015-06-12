@@ -64,3 +64,8 @@ return count( $comments_by_type['comment'] );
 return $count;
 }
 }
+register_nav_menus( array(
+    'primary' => __( 'Primary Menu', 'THEMENAME' ),
+) );
+
+include_once 'functions/function.php';
