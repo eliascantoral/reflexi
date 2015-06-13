@@ -1,18 +1,8 @@
 <?php get_header(); ?>
 <div class="row">
-  <div class="col-md-4">
-        <div class="panel panel-primary">
-            <div class="panel-heading">Productos</div>
-            <div class="panel-body">      
-                <?php get_categoriaslist();?>
-            </div>
-        </div>               
-        <div class="panel panel-primary">
-            <div class="panel-heading">Nuestras Marcas</div>
-            <div class="panel-body">
-                 <?php get_marcaslist();?>  
-            </div>
-        </div>
+  <div class="col-md-4">    
+    <?php get_categoriaslist();?>
+    <?php get_marcaslist();?>  
   </div>    
     <div class="col-md-8">
         <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>

@@ -21,12 +21,16 @@ function get_marcaslist(){
         $the_query = new WP_Query( $args ); 
         // The Loop
         if ( $the_query->have_posts() ) {
-            ?><div class="list-group"><?php 
-                while ( $the_query->have_posts() ) {
-                        $the_query->the_post();
-                        ?><a href="<?php echo get_permalink(); ?>" class="list-group-item"><?php echo the_title();?></a><?php                                            
-                }
-                ?></div><?php 
+            ?>
+        <h3>Nuestras Marcas</h3>
+            
+                    <div class="list-group"><?php 
+                        while ( $the_query->have_posts() ) {
+                                $the_query->the_post();
+                                ?><a href="<?php echo get_permalink(); ?>" class="list-group-item"><?php echo the_title();?></a><?php                                            
+                        }
+                    ?></div>
+            <?php 
         } else {
                 // no posts found
         }

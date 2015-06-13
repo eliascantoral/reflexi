@@ -12,9 +12,16 @@ function get_categoriaslist(){
           'order' => 'ASC'
           );
         $categories = get_categories($args);
-            ?><div class="list-group"><?php 
+            ?>
+        
+            <h3>Productos</h3>
+           
+                <div class="list-group"><?php 
                 foreach($categories as $category) { 
                     ?><a href="<?php echo get_category_link( $category->term_id ); ?>" class="list-group-item"><?php echo $category->name;?></a><?php             
                 }
-            ?></div><?php 
+            ?>
+                </div>
+           
+        <?php 
 }
