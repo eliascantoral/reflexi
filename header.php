@@ -34,70 +34,69 @@
 <meta name="theme-color" content="#ffffff">
 
 </head>
-<body <?php body_class(); ?>>
-<div class="container">
-    <div id="header">
-        <div id="myCarousel" class="carousel slide" data-ride="carousel">
-          <div class="carousel-inner" role="listbox">
-                <?php 
-                        //$pageslider = get_field("slider");
-                        $the_slider = get_field("slider","options");
-                        if($the_slider){
-                                for($i=0;$i<sizeof($the_slider);$i++){?>
-                                        <div class="item <?php echo $i==0?"active":"";?>">
-                                          <img class="first-slide" src="<?php echo $the_slider[$i][imagen]?>" alt="First slide">
-                                          <div class="container">
-                                                <div class="carousel-caption"></div>
-                                          </div>
-                                        </div>	
-                                <?php }
-                        }
+<body <?php body_class(); ?>>           
+            <div id="myCarousel" class="carousel slide" data-ride="carousel">              
+              <div class="carousel-inner" role="listbox" align="center">
+                            <?php 
+                                    //$pageslider = get_field("slider");
+                                    $the_slider = get_field("slider","options");
+                                    if($the_slider){
+                                            for($i=0;$i<sizeof($the_slider);$i++){?>
+                                                    <div class="item <?php echo $i==0?"active":"";?>">
+                                                      <img class="first-slide" src="<?php echo $the_slider[$i][imagen]?>" alt="First slide">
+                                                      <div class="container">                                                                                                                     
+                                                          
+                                                      </div>
+                                                    </div>	
+                                            <?php }
+                                    }
 
-                ?>
+                            ?>
+              </div>             
+            </div>        
+    <div class="container">
+        <div class="navbar-wrapper">
+          <div class="container">
+
+            <nav class="navbar navbar-static-top">
+              <div class="container">
+                <div class="navbar-header">
+                  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </button>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                    <a class="navbar-brand" href="<?php echo get_home_url(); ?>">
+                            <img alt="Brand" src="<?php echo get_template_directory_uri(); ?>/images/logomin.png" width="20px">
+                    </a>
+                                <?php 
+                                $menu_args = array(
+                                  'menu'            => 'Main Menu', 
+                                  'container'       => 'container', 
+                                  'container_class' => 'container_class', 
+                                  'container_id'    => 'container_id',
+                                  'menu_class'      => 'nav navbar-nav',
+                                  'menu_id'         => 'menu_id',
+                                  'echo'            => true,
+                                  'fallback_cb'     => 'wp_bootstrap_navwalker::fallback',
+                                  'walker'          => new wp_bootstrap_navwalker());
+                                ?>
+                                <?php wp_nav_menu($menu_args);?>    
+                    <ul class="nav navbar-nav navbar-right">
+                    <li>
+                                    <form class="navbar-form navbar-left" role="search">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" placeholder="Buscar">
+                                        </div>
+                                    </form>  
+                    </li>
+                    </ul>
+                </div>
+              </div>
+            </nav>
+
           </div>
-        </div><!-- /.carousel -->	
-    </div>   
-        
- <nav id="menu-container" class="navbar navbar-default">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        
-      </button>         
-    </div>
-
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse menu-home" id="bs-example-navbar-collapse-1">
-        <a class="navbar-brand" href="<?php echo get_home_url(); ?>">
-                <img alt="Brand" src="<?php echo get_template_directory_uri(); ?>/images/logomin.png" width="20px">
-        </a>
-                    <?php 
-                    $menu_args = array(
-                      'menu'            => 'Main Menu', 
-                      'container'       => 'container', 
-                      'container_class' => 'container_class', 
-                      'container_id'    => 'container_id',
-                      'menu_class'      => 'nav navbar-nav',
-                      'menu_id'         => 'menu_id',
-                      'echo'            => true,
-                      'fallback_cb'     => 'wp_bootstrap_navwalker::fallback',
-                      'walker'          => new wp_bootstrap_navwalker());
-                    ?>
-                    <?php wp_nav_menu($menu_args);?>    
-        <ul class="nav navbar-nav navbar-right">
-        <li>
-                        <form class="navbar-form navbar-left" role="search">
-                            <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Buscar">
-                            </div>
-                        </form>  
-        </li>
-        </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
+        </div>        

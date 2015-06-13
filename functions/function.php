@@ -62,4 +62,7 @@ function the_excerpt_max_charlength($postid, $charlength) {
 	
 /******************************************************************************************************/
     include_once 'wp_bootstrap_navwalker.php';
+    include_once 'blocks/marcas.php';
+    include_once 'blocks/categorias.php';
+    include_once 'blocks/productos.php';
 ?>
