@@ -14,7 +14,22 @@ function get_producto($producto){
     $images = get_field('imagenes',$producto);
     //print_array($images);
     $image = $images[0][imagen];
+    $marca = get_field('marca',$producto);
+    //var_dump($marca);
     ?>
+  <div class="col-sm-6">
+ 
+    <!-- normal -->
+    <div class="ih-item square effect1 left_and_right"><a href="<?php echo get_permalink($producto); ?>">
+        <div class="img"><img src="<?php echo $image;?>" alt="img"></div>
+        <div class="info">
+          <h3><?php echo get_the_title($producto);?></h3>
+          <p><?php echo get_the_title( $marca[0] ); ?> </p>
+        </div></a></div>
+    <!-- end normal -->
+ 
+  </div>
+<?php /*?>
 <div class="product_box">
     <div class="product_box_header">
         <a href="<?php echo get_permalink($producto); ?>"><img src="<?php echo $image;?>" width="100%"></a>
@@ -24,6 +39,7 @@ function get_producto($producto){
         <strong><a href="<?php echo get_permalink($producto); ?>"><?php echo get_the_title($producto);?></a></strong>
     </div>
 </div>
+ <?php */?>
     <?php
 }
 
@@ -46,7 +62,7 @@ function get_productosbymarca($marca){
     <?php endif;    
 }
 
-function get_homeproducts(){
+function get_homeproducts($elements = 4){
     $productos = get_posts(array(
             'post_type' => 'producto',
             'meta_query' => array(
@@ -55,7 +71,9 @@ function get_homeproducts(){
                             'value' => '1',
                             'compare' => 'LIKE'
                     )
-            )
+            ),
+            'posts_per_page' => $elements,
+            'order'                  => 'DESC',
     ));
     ?>
     <?php if( $productos ): ?>							

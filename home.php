@@ -5,7 +5,7 @@ Template Name: Home page
 get_header(); ?>
 <link href="<?php echo get_template_directory_uri(); ?>/style/animate.min.css" rel="stylesheet">
 <div class="row">
-  <div class="col-md-4">
+  <div class="col-md-3">
         <?php get_categoriaslist();?>
         <?php get_marcaslist();?>  
   </div>    
@@ -42,46 +42,6 @@ get_header(); ?>
                                     }
 
                             ?>
-        <!-- First slide -->
- <!--       <div class="item active deepskyblue">
-
-          <div class="carousel-caption">
-            <h3 data-animation="animated bounceInLeft">
-              This is the caption for slide 1
-            </h3>
-            <h3 data-animation="animated bounceInRight">
-              This is the caption for slide 1
-            </h3>
-            <button class="btn btn-primary btn-lg" data-animation="animated zoomInUp">Button</button>
-          </div>
-        </div> <!-- /.item -->
-
-        <!-- Second slide -->
-<!--        <div class="item skyblue">
-          <div class="carousel-caption">
-            <h3 class="icon-container" data-animation="animated bounceInDown">
-              <span class="glyphicon glyphicon-heart"></span>
-            </h3>
-            <h3 data-animation="animated bounceInUp">
-              This is the caption for slide 2
-            </h3>
-            <button class="btn btn-primary btn-lg" data-animation="animated zoomInRight">Button</button>
-          </div>
-        </div><!-- /.item -->
-
-        <!-- Third slide -->
-<!--        <div class="item darkerskyblue">
-          <div class="carousel-caption">
-            <h3 class="icon-container" data-animation="animated zoomInLeft">
-              <span class="glyphicon glyphicon-glass"></span>
-            </h3>
-            <h3 data-animation="animated flipInX">
-              This is the caption for slide 3
-            </h3>
-            <button class="btn btn-primary btn-lg" data-animation="animated lightSpeedIn">Button</button>
-          </div>
-        </div><!-- /.item -->
-
       </div><!-- /.carousel-inner -->
 
       <!-- Controls -->
@@ -93,7 +53,11 @@ get_header(); ?>
         <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
         <span class="sr-only">Next</span>
       </a>
-    </div>       
+    </div>  
+        <br>
+        <div class="row">
+            <?php get_homeproducts(4);?>            
+        </div>
     </div>
 </div>
 
