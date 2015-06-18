@@ -35,25 +35,22 @@
 
 </head>
 <body <?php body_class(); ?>>           
-            <div id="myCarousel" class="carousel slide" data-ride="carousel">              
-              <div class="carousel-inner" role="listbox" align="center">
-                            <?php 
-                                    //$pageslider = get_field("slider");
-                                    $the_slider = get_field("slider","options");
-                                    if($the_slider){
-                                            for($i=0;$i<sizeof($the_slider);$i++){?>
-                                                    <div class="item <?php echo $i==0?"active":"";?>">
-                                                      <img class="first-slide" src="<?php echo $the_slider[$i][imagen]?>" alt="First slide">
-                                                      <div class="container">                                                                                                                     
-                                                          
-                                                      </div>
-                                                    </div>	
-                                            <?php }
-                                    }
-
-                            ?>
-              </div>             
-            </div>        
+    <?php 
+        $bg_color = get_field("header_color","options");
+        $logo = get_field("logo","options");
+        $promocenter = get_field("promo_center","options");
+        $promoright = get_field("promo_right","options");
+    ?>
+    <div id="page_header" style="background-color: <?php echo $bg_color?$bg_color:"#09c"?>;">              
+        <div class="container">
+            <div class="row">
+                <div id="header_p1" class="col-xs-6 col-sm-4"><?php if($logo){?><img src="<?php echo $logo;?>" height="80px"><?php }?></div>
+                <div id="header_p2" class="col-xs-6 col-sm-4" align="center"><?php if($promocenter){?><img src="<?php echo $promocenter;?>" height="80px"><?php }?></div>
+                <div class="clearfix visible-xs-block"></div>
+                <div id="header_p3" class="col-xs-6 col-sm-4" align="right"><?php if($promoright){?><img src="<?php echo $promoright;?>" height="80px"><?php }?></div>
+            </div>
+        </div>
+    </div>        
     <div class="container">
         <div class="navbar-wrapper">
           <div class="container">
