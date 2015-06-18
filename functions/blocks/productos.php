@@ -45,3 +45,22 @@ function get_productosbymarca($marca){
             <?php endforeach; ?>							
     <?php endif;    
 }
+
+function get_homeproducts(){
+    $productos = get_posts(array(
+            'post_type' => 'producto',
+            'meta_query' => array(
+                    array(
+                            'key' => 'home',
+                            'value' => '1',
+                            'compare' => 'LIKE'
+                    )
+            )
+    ));
+    ?>
+    <?php if( $productos ): ?>							
+            <?php foreach( $productos as $producto ): ?>
+                <?php get_producto($producto->ID);?>
+            <?php endforeach; ?>							
+    <?php endif;     
+}
