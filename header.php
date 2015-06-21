@@ -12,6 +12,7 @@
 <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/style/ihover.min.css">
 
 <script src="<?php echo get_template_directory_uri(); ?>/js/jquery.js"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/js/jquery.simpleGal.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/js/jqueryui/jquery-ui.min.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/bootstrap/js/bootstrap.min.js"></script>
 
@@ -46,9 +47,9 @@
         <div class="container">
             <div class="row">
                 <div id="header_p1" class="col-xs-6 col-sm-4"><?php if($logo){?><img src="<?php echo $logo;?>" height="80px"><?php }?></div>
-                <div id="header_p2" class="col-xs-6 col-sm-4" align="center"><?php if($promocenter){?><img src="<?php echo $promocenter;?>" height="80px"><?php }?></div>
+                <div id="header_p2" class="col-xs-6 col-sm-4 hidden-xs" align="center"><?php if($promocenter){?><img src="<?php echo $promocenter;?>" height="80px"><?php }?></div>
                 <div class="clearfix visible-xs-block"></div>
-                <div id="header_p3" class="col-xs-6 col-sm-4" align="right"><?php if($promoright){?><img src="<?php echo $promoright;?>" height="80px"><?php }?></div>
+                <div id="header_p3" class="col-xs-6 col-sm-4 hidden-xs" align="right"><?php if($promoright){?><img src="<?php echo $promoright;?>" height="80px"><?php }?></div>
             </div>
         </div>
     </div>        

@@ -10,15 +10,7 @@ get_header(); ?>
         <?php get_marcaslist();?>  
   </div>    
     <div class="col-md-9">
-<div id="carousel-example-generic" class="carousel slide">
-      <!-- Indicators 
-      <ol class="carousel-indicators">
-        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-      </ol>
-        -->
-      <!-- Wrapper for slides -->
+<div id="carousel-example-generic" class="carousel slide hidden-xs">
       <div class="carousel-inner" role="listbox">
                             <?php 
                                     //$pageslider = get_field("slider");
@@ -42,9 +34,7 @@ get_header(); ?>
                                     }
 
                             ?>
-      </div><!-- /.carousel-inner -->
-
-      <!-- Controls -->
+      </div>
       <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
         <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
         <span class="sr-only">Previous</span>
