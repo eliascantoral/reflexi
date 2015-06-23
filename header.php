@@ -73,12 +73,12 @@
                     </a>
                                 <?php 
                                 $menu_args = array(
-                                  'menu'            => 'Main Menu', 
+                                  'menu'            => 'Menú 1', 
                                   'container'       => 'container', 
                                   'container_class' => 'container_class', 
                                   'container_id'    => 'container_id',
                                   'menu_class'      => 'nav navbar-nav',
-                                  'menu_id'         => 'menu_id',
+                                  'menu_id'         => '2',
                                   'echo'            => true,
                                   'fallback_cb'     => 'wp_bootstrap_navwalker::fallback',
                                   'walker'          => new wp_bootstrap_navwalker());

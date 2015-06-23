@@ -46,6 +46,7 @@ get_header(); ?>
     </div>  
         <br>
         <div class="row">
+            <h3>Productos recientes</h3>
             <?php get_homeproducts(4);?>            
         </div>
     </div>

@@ -1,10 +1,10 @@
 <?php get_header(); ?>
 <div class="row">
-  <div class="col-md-4">    
+  <div class="col-md-3">    
     <?php get_categoriaslist();?>
     <?php get_marcaslist();?>  
   </div>    
-    <div class="col-md-8">
+    <div class="col-md-9">
         <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
             <section id="content" role="main">
                 <h2><?php echo the_title();?></h2>
@@ -14,7 +14,7 @@
                         if($imagenes){
                             ?>
                                 <div class="main-image">
-                                  <img src="<?php echo $imagenes[0][imagen];?>" alt="Placeholder" class="custom">
+                                  <img src="<?php echo $imagenes[0][imagen];?>" alt="Placeholder" class="product-image">
                                 </div>   
                                 <ul class="thumbnails">
                                     <?php
@@ -31,21 +31,41 @@
                 </div>
                 <?php echo get_field('descripcion');?>
             </section> 
-            <section id="productdocs" role="main"> 
+        <div class="clear"></div>
                 <?php 
                     $document = get_field('documentos');
-                    if($document){
-                        print_array($document);
-                    }else{
-                        echo "No hay documentos.";
-                    }
-                    
-                ?>
-            </section>        
-            <section id="content" role="main">                
-                <h3>Productos</h3>
-                <?php get_productosbymarca(get_the_ID());?>
-            </section>
+                    if($document){?>
+                    <section id="productdocs" role="main"> 
+                        <h3>Documentos</h3>
+                        <div class="row">
+                            <?php for($i=0;$i<sizeof($document);$i++){?>
+                                <div class="col-xs-6 col-md-3">
+                                    <div class="thumbnail">
+                                        <a href="<?php echo $document[$i][documento];?>" download>
+                                        <img src="<?php echo get_template_directory_uri(); ?>/images/download.png" alt="Descargar">                                    
+                                        </a>
+                                        <div class="caption" align="center">
+                                            <a href="<?php echo $document[$i][documento];?>" download><h4><?php echo $document[$i][nombre];?></h4></a>
+                                        </div>
+                                    </div>
+                                </div>                        
+                            <?php }?>                            
+                        </div>
+                    </section>
+                    <?php }?>   
+                <?php 
+                    $otherproducts = get_field('productos_relacionados');
+                    if($otherproducts){?>
+                        <section id="content" role="main">                
+                        <h3>Productos relacionados</h3>
+                        <?php 
+                            for($i=0;$i<sizeof($otherproducts);$i++){
+                                get_producto($otherproducts[$i]);
+                            }
+                        ?>
+                        </section>                    
+                    <?php }
+                ?>            
         <?php endwhile; endif; ?>
     </div>
 </div>
@@ -53,7 +73,7 @@
   <script>
     $(document).ready(function () {
       $('.thumbnails').simpleGal({
-        mainImage: '.custom'
+        mainImage: '.product-image'
       });
     });
   </script>
