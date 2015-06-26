@@ -47,15 +47,7 @@
         <div class="container">
             <div class="row">
                 <div id="header_p1" class="col-xs-6"><?php if($logo){?><img src="<?php echo $logo;?>" height="80px"><?php }?></div>
-                <div id="header_p3" class="col-xs-6" align="right">
-                        <?php $social = get_field("social","options");
-                              if($social){
-                                  for($i=0;$i<sizeof($social);$i++){?>
-                        <a href="<?php echo $social[$i][url];?>" target="_blank"><img src="<?php echo $social[$i][imagen];?>" width="40px"></a>
-                                  <?php }                
-                              }
-                        ?>                
-                </div>
+                <div id="header_p3" class="col-xs-6" align="right"></div>
             </div>
         </div>
     </div>        

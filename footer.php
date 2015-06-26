@@ -33,7 +33,13 @@
               </div>
           </div>
           <div class="col-xs-6 col-md-4 footer-part" align="right">
-
+                        <?php $social = get_field("social","options");
+                              if($social){
+                                  for($i=0;$i<sizeof($social);$i++){?>
+                        <a href="<?php echo $social[$i][url];?>" target="_blank"><img src="<?php echo $social[$i][imagen];?>" width="40px"></a>
+                                  <?php }                
+                              }
+                        ?>     
           </div>
         </div>
         <div id="copyright">

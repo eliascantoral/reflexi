@@ -9,7 +9,8 @@
 function get_categoriaslist(){
         $args = array(
           'orderby' => 'name',
-          'order' => 'ASC'
+          'order' => 'ASC',
+          'hide_empty'               => 0,
           );
         $categories = get_categories($args);
             ?>

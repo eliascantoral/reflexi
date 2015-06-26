@@ -6,7 +6,7 @@
     <div class="col-md-9">
         <section id="content" role="main">
         <header class="header">
-        <h1 class="entry-title"><?php _e( 'Category Archives: ', 'blankslate' ); ?><?php single_cat_title(); ?></h1>
+            <h1 style="text-align: left;"><strong><?php single_cat_title(); ?></strong></h1>
         <?php if ( '' != category_description() ) echo apply_filters( 'archive_meta', '<div class="archive-meta">' . category_description() . '</div>' ); ?>
         </header>
             <p><?php echo category_description(); ?></p>
