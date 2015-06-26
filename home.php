@@ -6,8 +6,7 @@ get_header(); ?>
 <link href="<?php echo get_template_directory_uri(); ?>/style/animate.min.css" rel="stylesheet">
 <div class="row">
   <div class="col-md-3">
-        <?php get_categoriaslist();?>
-        <?php get_marcaslist();?>  
+        <?php get_categoriaslist();?> 
   </div>    
     <div class="col-md-9">
 <div id="carousel-example-generic" class="carousel slide hidden-xs">

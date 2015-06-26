@@ -33,6 +33,36 @@
             </section> 
         <div class="clear"></div>
                 <?php 
+                    $folleto = get_field('folleto');
+                    if($folleto){?>
+                    <section id="productfolleto" role="main"> 
+                        <h3>Folleto</h3>
+                        <div class="product-folleto">
+                            <?php 
+                                $imagenes = $folleto;
+                                //print_array($imagenes);
+                                if($imagenes){
+                                    ?>
+                                        <div class="main-image">
+                                          <img src="<?php echo $imagenes[0][imagen];?>" alt="Placeholder" class="product-image">
+                                        </div>   
+                                        <ul class="thumbnails">
+                                            <?php
+                                                for($i=0;$i<sizeof($imagenes);$i++){
+                                                    ?>
+                                                    <li><a href="<?php echo $imagenes[$i][imagen];?>"><img class="thumbnails-image" src="<?php echo $imagenes[$i][imagen];?>" alt="Thumbnails"></a></li>                        
+                                                    <?php 
+                                                }
+                                            ?>
+                                         </ul>                                 
+                                        <?php
+                                }
+                             ?>                            
+                        </div>
+                    </section>
+                    <?php }?>          
+        <div class="clear"></div>
+                <?php 
                     $document = get_field('documentos');
                     if($document){?>
                     <section id="productdocs" role="main"> 

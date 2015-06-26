@@ -82,3 +82,18 @@ function get_homeproducts($elements = 4){
             <?php endforeach; ?>							
     <?php endif;     
 }
+
+function get_productsbycategory($category){
+    $productos = get_posts(array(
+            'post_type' => 'producto',
+            'cat'                    => $category,
+            'posts_per_page' => -1,
+            'order'                  => 'DESC',
+    ));    
+   ?>
+    <?php if( $productos ): ?>							
+            <?php foreach( $productos as $producto ): ?>
+                <?php get_producto($producto->ID);?>
+            <?php endforeach; ?>							
+    <?php endif;      
+}
