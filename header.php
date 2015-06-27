@@ -43,11 +43,17 @@
         $promocenter = get_field("promo_center","options");
         $promoright = get_field("promo_right","options");
     ?>
-    <div id="page_header" style="background-color: <?php echo $bg_color?$bg_color:"#09c"?>;">              
+    <div id="page_header">              
         <div class="container">
             <div class="row">
                 <div id="header_p1" class="col-xs-6"><?php if($logo){?><img src="<?php echo $logo;?>" height="80px"><?php }?></div>
-                <div id="header_p3" class="col-xs-6" align="right"></div>
+                <div id="header_p3" class="col-xs-6" align="right">
+                                    <form class="navbar-form navbar-right" role="search">
+                                        <div class="form-group">
+                                            <input type="text" id="search_input" class="form-control" placeholder="Buscar">
+                                        </div>
+                                    </form>                      
+                </div>
             </div>
         </div>
     </div>        
@@ -82,15 +88,6 @@
                                   'walker'          => new wp_bootstrap_navwalker());
                                 ?>
                                 <?php wp_nav_menu($menu_args);?>    
-                    <ul class="nav navbar-nav navbar-right">
-                    <li>
-                                    <form class="navbar-form navbar-left" role="search">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Buscar">
-                                        </div>
-                                    </form>  
-                    </li>
-                    </ul>
                 </div>
               </div>
             </nav>

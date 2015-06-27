@@ -20,14 +20,17 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
     font-family: myfont;
     src: url(style/neuropol.ttf);
 }
-
+h2:hover {
+    color: #4866af;
+}
+/*
 h1, h2, h3, h4, h5, h6 {
     font-family: myfont;
 }
 p, div {
     font-family: myfont;
 }
-
+*/
 body{
     background: rgba(255,255,255,1);
     background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
@@ -52,6 +55,9 @@ body{
 }
 .clear{
     clear: both;
+}
+#search_input{
+    border: solid 2px #4866af !important;
 }
 /************************************/
 #header_p3{
@@ -263,7 +269,7 @@ body{
     background-image: none;
 }
 .carousel .item {
-    min-height: 350px; 
+    min-height: 250px; 
     height: 100%;
     width:100%; 
 }
@@ -329,6 +335,14 @@ h1 {
 #page_header{
     min-height: 100px;
     padding-top: 5px;
+background: rgba(242,246,248,1);
+background: -moz-linear-gradient(top, rgba(242,246,248,1) 0%, rgba(181,198,208,1) 15%, rgba(224,239,249,1) 100%);
+background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(242,246,248,1)), color-stop(15%, rgba(181,198,208,1)), color-stop(100%, rgba(224,239,249,1)));
+background: -webkit-linear-gradient(top, rgba(242,246,248,1) 0%, rgba(181,198,208,1) 15%, rgba(224,239,249,1) 100%);
+background: -o-linear-gradient(top, rgba(242,246,248,1) 0%, rgba(181,198,208,1) 15%, rgba(224,239,249,1) 100%);
+background: -ms-linear-gradient(top, rgba(242,246,248,1) 0%, rgba(181,198,208,1) 15%, rgba(224,239,249,1) 100%);
+background: linear-gradient(to bottom, rgba(242,246,248,1) 0%, rgba(181,198,208,1) 15%, rgba(224,239,249,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f6f8', endColorstr='#e0eff9', GradientType=0 ); 
 }
 
 .ih-item{
@@ -341,9 +355,23 @@ h1 {
     padding: 20px;
     -webkit-box-shadow: 0px -4px 5px 0px rgba(0,0,0,0.75);
     -moz-box-shadow: 0px -4px 5px 0px rgba(0,0,0,0.75);
-    box-shadow: 0px -4px 5px 0px rgba(0,0,0,0.75);    
+    box-shadow: 0px -4px 5px 0px rgba(0,0,0,0.75);  
+background: rgba(242,246,248,1);
+background: -moz-linear-gradient(top, rgba(242,246,248,1) 0%, rgba(181,198,208,1) 93%, rgba(224,239,249,1) 100%);
+background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(242,246,248,1)), color-stop(93%, rgba(181,198,208,1)), color-stop(100%, rgba(224,239,249,1)));
+background: -webkit-linear-gradient(top, rgba(242,246,248,1) 0%, rgba(181,198,208,1) 93%, rgba(224,239,249,1) 100%);
+background: -o-linear-gradient(top, rgba(242,246,248,1) 0%, rgba(181,198,208,1) 93%, rgba(224,239,249,1) 100%);
+background: -ms-linear-gradient(top, rgba(242,246,248,1) 0%, rgba(181,198,208,1) 93%, rgba(224,239,249,1) 100%);
+background: linear-gradient(to bottom, rgba(242,246,248,1) 0%, rgba(181,198,208,1) 93%, rgba(224,239,249,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f6f8', endColorstr='#e0eff9', GradientType=0 );    
 }
 
 .footer-menu-canvas{
     width: 200px;
+}
+
+
+.list-group a{
+    border: none;
+    background-color: none;
 }
