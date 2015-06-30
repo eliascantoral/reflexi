@@ -26,3 +26,37 @@ function get_categoriaslist(){
            
         <?php 
 }
+
+function get_categoriasbox(){
+        $args = array(
+          'orderby' => 'name',
+          'order' => 'ASC',
+          'hide_empty'               => 0,
+          );
+        $categories = get_categories($args);
+            ?><div class="row"><?php
+                foreach($categories as $category) {
+                    //var_dump($category);
+            ?>
+                  <div class="col-xs-12 col-sm-4">
+
+                            <?php $catimage = get_field("imagen",$category->taxonomy."_".$category->term_id);?>
+                            <?php if($catimage){?>
+                      <div class="product_category_box">
+                            <a href="<?php echo get_category_link( $category->term_id ); ?>" >   
+                                      <img src="<?php echo $catimage;?>" alt="Producto" height="90%" />   
+                            </a>
+                      </div>
+                            <?php }else{?>
+                      <div class="product_category_box">
+                            <a href="<?php echo get_category_link( $category->term_id ); ?>" >                                
+                                <h4><?php echo $category->name;?></h4>
+                            </a>                          
+                      </div>                                
+                            <?php }?>                          
+                      
+                  </div>                         
+            <?php     
+                }
+                ?></div><?php                
+}
