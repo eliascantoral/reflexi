@@ -1,14 +1,14 @@
 <?php get_header(); ?>
 <div class="row">
-  <div class="col-md-4">    
+  <div class="col-md-3">    
     <?php get_categoriaslist();?>
     <?php get_marcaslist();?>  
   </div>    
-    <div class="col-md-8">
+    <div class="col-md-9">
         <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
             <section id="content" role="main">
                 <h2><?php echo the_title();?></h2>
-                <img src="<?php echo get_field('logo');?>" width="200px" class="alignleft">
+                <img src="<?php echo get_field('logo');?>" width="150px" class="alignleft">
                 <?php echo get_field('descripcion');?>
             </section> 
             <section id="content" role="main">                

@@ -44,8 +44,9 @@ function get_categoriasbox(){
                             <?php if($catimage){?>
                       <div class="product_category_box">
                             <a href="<?php echo get_category_link( $category->term_id ); ?>" >   
-                                      <img src="<?php echo $catimage;?>" alt="Producto" height="90%" />   
-                            </a>
+                                <img src="<?php echo $catimage;?>" alt="Producto" height="90%" class="alignleft"/>                                      
+                                <h4><?php echo $category->name;?> </h4>
+                            </a>                           
                       </div>
                             <?php }else{?>
                       <div class="product_category_box">

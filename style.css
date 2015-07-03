@@ -396,7 +396,7 @@ background: -ms-linear-gradient(top, rgba(181,198,208,1) 0%, rgba(242,244,245,1)
 background: linear-gradient(to bottom, rgba(181,198,208,1) 0%, rgba(242,244,245,1) 50%, rgba(181,198,208,1) 100%);
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b5c6d0', endColorstr='#b5c6d0', GradientType=0 );    
     border: 0px solid #000000;    
-    height: 90px;
+    height: 110px;
     margin: 10px;
     text-align: center;
     padding-top: 10px;
@@ -422,4 +422,11 @@ background: -o-linear-gradient(top, rgba(181,198,208,1) 0%, rgba(242,244,245,1) 
 background: -ms-linear-gradient(top, rgba(181,198,208,1) 0%, rgba(242,244,245,1) 50%, rgba(181,198,208,1) 100%);
 background: linear-gradient(to bottom, rgba(181,198,208,1) 0%, rgba(242,244,245,1) 50%, rgba(181,198,208,1) 100%);
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b5c6d0', endColorstr='#b5c6d0', GradientType=0 );      
+}
+
+.marcas-list{
+    padding: 10px;
+}
+.marcas-list a{
+    margin: 10px;
 }
