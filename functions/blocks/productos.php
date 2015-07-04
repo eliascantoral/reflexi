@@ -97,3 +97,62 @@ function get_productsbycategory($category){
             <?php endforeach; ?>							
     <?php endif;      
 }
+
+function get_productosbysearch($s){
+        $productos = array();
+        // WP_Query arguments
+        $args = array (
+                'post_type'              => 'producto',                
+                'post_status'            => 'publish',
+                'order'                  => 'DESC',
+                'posts_per_page'         => 20,
+                'meta_query'	=> array(
+                        'relation'		=> 'OR',
+                        array(
+                                'key'		=> 'descripcion',
+                                'value'		=> $s,
+                                'compare'	=> 'LIKE'
+                        ),
+                        array(
+                                'key'		=> 'title',
+                                'value'		=> $s,
+                                'compare'	=> 'LIKE'
+                        )
+                )            
+        );
+
+        // The Query
+        $the_query = new WP_Query( $args ); 
+        // The Loop
+        if ( $the_query->have_posts() ) {
+                while ( $the_query->have_posts() ) {
+                        $the_query->the_post();
+                        array_push($productos, get_the_ID());                                          
+                }
+        }  
+        $args = array (
+                'post_type'              => 'producto',                
+                'post_status'            => 'publish',
+                'order'                  => 'DESC',   
+                's'                      => $s,
+                'posts_per_page'         => 20,
+        );
+
+        // The Query
+        $the_query = new WP_Query( $args ); 
+        // The Loop
+        if ( $the_query->have_posts() ) {
+                while ( $the_query->have_posts() ) {
+                        $the_query->the_post();
+                        if(!array_contain(get_the_ID(), $productos, 0)){array_push($productos, get_the_ID());}
+                                                                  
+                }
+        }
+        if(sizeof($productos)>0){
+            for($i=0;$i<sizeof($productos);$i++){
+                 get_producto($productos[$i]);
+            }    
+        }else{
+            echo '<h3>Lo sentimos no se encontraron productos.</h3>';
+        }
+}

@@ -30,23 +30,21 @@ function get_homeinfopage(){
             while ( $the_query->have_posts() ) {
                     $the_query->the_post();
                     ?>
-                        <div class="col-lg-4">
+                        <div class="col-lg-4 home-links">
                             <?php $url = wp_get_attachment_url( get_post_thumbnail_id(get_the_ID()) );?>
-                            <img class="img-circle" src="<?php echo $url;?>" alt="Generic placeholder image" width="140" height="140">
-                            <h2><?php echo get_the_title();?></h2>
+                                <a href="<?php echo get_permalink(); ?>">
+                                    <img class="img-circle" src="<?php echo $url;?>" alt="Generic placeholder image" width="140" height="140">
+                                </a>    
+                            <h2><a href="<?php echo get_permalink(); ?>"><?php echo get_the_title();?></a></h2>
                             <p>
-                                <?php echo the_excerpt_max_charlength(get_the_ID(),400);?>
-                            </p>
-                            <p><a class="btn btn-default" href="<?php echo get_permalink(); ?>" role="button">Ver mas &raquo;</a></p>
+                                <a href="<?php echo get_permalink(); ?>"><?php echo the_excerpt_max_charlength(get_the_ID(),400);?></a>
+                            </p>                           
                         </div><!-- /.col-lg-4 -->        
 
-                    <?php                 
-                    
-                   // echo '<li>' . get_the_title() . '</li>';
+                    <?php                                     
             }            
     } else {
-            // no posts found
+           
     }
-    /* Restore original Post Data */
     wp_reset_postdata();        
 }

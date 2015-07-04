@@ -1,7 +1,7 @@
 </div>
 <div class="clear"></div>
 <?php $bg_color = get_field("header_color","options");?>
-<div id="footer" role="contentinfo" style="background-color: <?php echo $bg_color?$bg_color:"#09c"?>;">
+<div id="footer" role="contentinfo">
     <div class="container">
         <div class="row">
           <div class="col-xs-6 col-md-4 footer-part" align="left">

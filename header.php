@@ -50,14 +50,14 @@
                 <div id="header_p3" class="col-xs-6" align="right">
                                     <form class="navbar-form navbar-right" role="search">
                                         <div class="form-group">
-                                            <input type="text" id="search_input" class="form-control" placeholder="Buscar">
+                                            <input type="text" id="search_input" name="s" class="form-control" placeholder="Buscar" value="<?php echo isset($_GET["s"])?$_GET["s"]:"";?>">
                                         </div>
                                     </form>                      
                 </div>
             </div>
         </div>
     </div>        
-    <div class="container">
+    <div class="container" id="main-container">
         <div class="navbar-wrapper">
           <div class="container">
 
