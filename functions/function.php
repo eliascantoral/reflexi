@@ -89,4 +89,5 @@ function the_excerpt_max_charlength_page($postid, $charlength) {
     include_once 'blocks/categorias.php';
     include_once 'blocks/productos.php';
     include_once 'blocks/infopage.php';
+    include_once 'blocks/tiendas.php';
 ?>
