@@ -46,7 +46,7 @@
     <div id="page_header">              
         <div class="container">
             <div class="row">
-                <div id="header_p1" class="col-xs-6"><?php if($logo){?><img src="<?php echo $logo;?>" height="80px"><?php }?></div>
+                <div id="header_p1" class="col-xs-6"><?php if($logo){?><a href="<?php get_home_url(); ?>"><img src="<?php echo $logo;?>" height="80px"></a><?php }?></div>
                 <div id="header_p3" class="col-xs-6" align="right">
                                     <form class="navbar-form navbar-right" role="search">
                                         <div class="form-group">

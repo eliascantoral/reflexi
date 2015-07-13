@@ -10,6 +10,7 @@
         <?php if ( '' != category_description() ) echo apply_filters( 'archive_meta', '<div class="archive-meta">' . category_description() . '</div>' ); ?>
         </header>
             <p><?php echo category_description(); ?></p>
+            <hr class="style-four">
         <?php 
             get_productsbycategory($_GET["cat"]);
         ?>

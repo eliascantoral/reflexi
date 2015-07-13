@@ -30,7 +30,9 @@
                      ?>                                       
                 </div>
                 <?php echo get_field('descripcion');?>
+               
                 <div class="clear"></div>
+                 <hr class="style-four">
                 <h3>Certificaciones</h3>
                 <?php 
                      $certificaciones = wp_get_object_terms(get_the_ID(), 'certificacion');       
@@ -40,10 +42,11 @@
                      
                 ?>
             </section> 
-        <div class="clear"></div>
+        <div class="clear"></div>        
                 <?php 
                     $folleto = get_field('folleto');
                     if($folleto){?>
+                    <hr class="style-four">
                     <section id="productfolleto" role="main"> 
                         <h3>Folleto</h3>
                         <div class="product-folleto">                          
@@ -93,6 +96,7 @@
                 <?php 
                     $document = get_field('documentos');
                     if($document){?>
+                    <hr class="style-four">
                     <section id="productdocs" role="main"> 
                         <h3>Documentos</h3>
                         <div class="row">
@@ -114,6 +118,7 @@
                 <?php 
                     $otherproducts = get_field('productos_relacionados');
                     if($otherproducts){?>
+                    <hr class="style-four">
                         <section id="content" role="main">                
                         <h3>Productos relacionados</h3>
                         <?php 
